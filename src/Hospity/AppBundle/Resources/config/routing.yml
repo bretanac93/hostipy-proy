@@ -1,0 +1,11 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+news_homepage:
+    path:     /news
+    defaults: { _controller: AppBundle:Noticias:index }
+
+news_create:
+    path:     /news/create
+    defaults: { _controller: AppBundle:Noticias:create }

@@ -17,3 +17,5 @@ nbproject
 .settings
 .sublime-project
 .tm_properties
+
+composer.phar
