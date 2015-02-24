@@ -13,6 +13,7 @@ use Hospity\AppBundle\Form\NoticiaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+///TODO: Configure the FOSUserBundle correctly, already installed, only configure.
 class NoticiasController extends Controller{
 
     public function indexAction() {

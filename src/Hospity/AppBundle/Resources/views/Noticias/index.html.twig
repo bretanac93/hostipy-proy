@@ -1,1 +1,9 @@
-Welcome to the news section!!!!
+<h1>Noticias</h1>
+{% for item in noticias %}
+    <hr/>
+    <h3>{{ item.titulo }}</h3>
+    <p>{{ item.fechaCreacion | date }}</p>
+    <p>{{ item.contenido }}</p>
+{% else %}
+    <p>There is not any entry on the system.</p>
+{% endfor %}
