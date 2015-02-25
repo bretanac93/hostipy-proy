@@ -6,15 +6,6 @@
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
-    "repositories": [
-        {
-            "packagist": false
-        },
-        {
-            "type": "composer",
-            "url": "http://localhost:5800/composer_repository/"
-        }
-    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.5.*",
