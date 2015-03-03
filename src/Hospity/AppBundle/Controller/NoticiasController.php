@@ -46,7 +46,7 @@ class NoticiasController extends Controller{
         $new = $em->getRepository('AppBundle:Noticia')->find($id);
 
         if($new == null) {
-            $this->errorHandling();
+            return $this->errorHandling();
         }
         else {
             return $this->render('@App/Noticias/details.html.twig', array('new' => $new));
@@ -58,13 +58,16 @@ class NoticiasController extends Controller{
 
         $entity = $em->getRepository('AppBundle:Noticia')->find($id);
         if(!$entity) {
-            $this->errorHandling();
+            return $this->errorHandling();
         }
 
         $editForm = $this->createEditionForm($entity);
+        $deleteForm = $this->createDeleteForm($id);
         return $this->render('@App/Noticias/edit.html.twig', array(
-            'entity' => $entity,
-            'edit_form' => $editForm->createView())
+                'entity' => $entity,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView()
+            )
         );
 
     }
@@ -74,12 +77,11 @@ class NoticiasController extends Controller{
         $entity = $em->getRepository('AppBundle:Noticia')->find($id);
 
         if(!$entity) {
-            $this->errorHandling();
+            return $this->errorHandling();
         }
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditionForm($entity);
-
         $editForm->handleRequest($request);
 
         if($editForm->isValid()) {
