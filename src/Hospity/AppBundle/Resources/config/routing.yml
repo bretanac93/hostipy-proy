@@ -9,3 +9,21 @@ news_homepage:
 news_create:
     path:     /news/create
     defaults: { _controller: AppBundle:Noticias:create }
+
+news_details:
+    path:     /news/details/{id}
+    defaults: { _controller: AppBundle:Noticias:details }
+
+news_edit:
+    path:     /news/edit/{id}
+    defaults: { _controller: AppBundle:Noticias:edit }
+
+news_update:
+    path:     /news/update/{id}
+    defaults: { _controller: AppBundle:Noticias:update }
+    requirements: { _method: post|put }
+
+news_delete:
+    path:     /news/delete/{id}
+    defaults: { _controller: AppBundle:Noticias:delete }
+    requirements: { _method: post|delete }
