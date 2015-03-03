@@ -18,8 +18,6 @@ security:
     firewalls:
         main:
             pattern:    ^/
-            # it's important to notice that in this case _demo_security_check and _demo_login
-            # are route names and that they are specified in the AcmeDemoBundle
             form_login:
                 check_path: /login_check
                 login_path: /login
@@ -35,4 +33,10 @@ security:
     # of your application based on roles, ip, host or methods
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/, roles: ROLE_USER }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/create, roles: ROLE_ADMIN }
+        - { path: ^/edit, roles: ROLE_ADMIN }
+        - { path: ^/new, roles: ROLE_ADMIN }
+        - { path: ^/delete, roles: ROLE_ADMIN }
+        - { path: ^/update, roles: ROLE_ADMIN }
