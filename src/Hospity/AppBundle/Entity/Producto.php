@@ -62,7 +62,7 @@ class Producto
         return $this->id;
     }
 
-    public function setOwner(BaseUser $user) {
+    public function setOwner(User $user) {
         $this->owner = $user;
     }
 
