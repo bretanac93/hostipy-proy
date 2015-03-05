@@ -44,7 +44,7 @@ class Producto
     private $precio;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="Hospity\UserBundle\Entity\User")
     */
     private $owner;
 
