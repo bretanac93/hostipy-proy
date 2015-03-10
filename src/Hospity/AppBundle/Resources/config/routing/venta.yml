@@ -1,0 +1,7 @@
+sell_homepage:
+    path:     /
+    defaults: { _controller: "AppBundle:Venta:index" }
+
+sell_sell:
+    path:     /sell/{id}
+    defaults: { _controller: "AppBundle:Venta:sell" }

@@ -1,0 +1,45 @@
+admin_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Admin:index }
+##News Section
+news_create:
+    path:     new/create
+    defaults: { _controller: AppBundle:Noticias:create }
+
+news_edit:
+    path:     new/edit/{id}
+    defaults: { _controller: AppBundle:Noticias:edit }
+
+news_update:
+    path:     new/update/{id}
+    defaults: { _controller: AppBundle:Noticias:update }
+    requirements: { _method: post|put }
+
+news_delete:
+    path:     new/delete/{id}
+    defaults: { _controller: AppBundle:Noticias:delete }
+    requirements: { _method: post|delete }
+
+##Product Section
+product_new:
+    path:     product/new
+    defaults: { _controller: "AppBundle:Producto:new" }
+
+product_create:
+    path:     product/create
+    defaults: { _controller: "AppBundle:Producto:create" }
+    requirements: { _method: post }
+
+product_edit:
+    path:     product/edit/{id}
+    defaults: { _controller: "AppBundle:Producto:edit" }
+
+product_update:
+    path:     product/update/{id}
+    defaults: { _controller: "AppBundle:Producto:update" }
+    requirements: { _method: post|put }
+
+product_delete:
+    path:     product/delete/{id}
+    defaults: { _controller: "AppBundle:Producto:delete" }
+    requirements: { _method: post|delete }

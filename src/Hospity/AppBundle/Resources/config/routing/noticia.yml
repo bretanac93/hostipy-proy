@@ -1,0 +1,7 @@
+news_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Noticias:index }
+
+news_details:
+    path:     /details/{id}
+    defaults: { _controller: AppBundle:Noticias:details }
