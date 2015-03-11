@@ -32,6 +32,20 @@ class NoticiasController extends Controller{
         if (!$form->isValid()) {
             return $this->render('@App/Noticias/create.html.twig', array('noticiaform' => $form->createView()));
         } else {
+
+            $message = \Swift_Message::newInstance()
+                    -> setSubject("Noticia: " . $entity->getTitulo())
+                    -> setFrom("no-reply@hostipy.com")
+                    -> setTo("anywhere@localhost")
+                    -> setBody($this->renderView("AppBundle::mail.txt.twig",
+                        array(
+                            "title" => $entity->getTitulo(),
+                            "creation_date" => $entity->getFechaCreacion(),
+                            "content" => $entity->getContenido(),
+                    )));
+
+            $this->get('mailer')->send($message);
+
             $em = $this-> getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
